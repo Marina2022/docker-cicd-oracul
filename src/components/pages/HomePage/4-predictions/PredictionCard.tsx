@@ -2,7 +2,6 @@
 
 import React from 'react';
 import {Card} from "@/components/ui/card";
-import {PredictionType} from "@/types/predictionTypes";
 import {Badge} from "@/components/ui/badge";
 import {ChevronRight, Clock, TrendingDownIcon, TrendingUpIcon, Users} from "lucide-react";
 import {Button} from "@/components/ui/button";
@@ -13,7 +12,7 @@ import Link from "next/link";
 import {useRouter} from "next/navigation";
 import ShareButtons from "@/components/ui/Share";
 import {BASE_URL} from "../../../../../consts";
-import {PredictionCardType} from "@/features/predictionCard/types/PredictionCard";
+import {PredictionCardType} from "@/features/prediction/types/PredictionCard";
 import {formatDate} from "@/utils/formatDates";
 
 type Props = {
@@ -49,13 +48,16 @@ const PredictionCard = ({prediction}: Props) => {
           <div className="flex items-center space-x-2 mb-2">
             <Badge
               className="text-xs text-foreground bg-transparent border border-border ">{prediction.category}</Badge>
-            {
-              prediction.growing ? <TrendingUpIcon className="w-4 h-4 text-chart-4"/>:
-                <TrendingDownIcon className="w-4 h-4 text-chart-5"/>
-            }
+            {/*{*/}
+            {/*  prediction.growing ? <TrendingUpIcon className="w-4 h-4 text-chart-4"/>:*/}
+            {/*    <TrendingDownIcon className="w-4 h-4 text-chart-5"/>*/}
+            {/*}*/}
+
+
+            <TrendingUpIcon className="w-4 h-4 text-chart-4"/>
           </div>
           <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">{prediction.home} — {prediction.away} {formatDate(prediction.timeline)}</h3>
-          <p className="text-sm text-muted-foreground mb-5">Футбол, Чемпионат Испании (добавить в API)</p>
+          <p className="text-sm text-muted-foreground mb-5">{prediction.sport}, {prediction.competition}</p>
         </div>
         <ShareButtons url={`${BASE_URL}/predictions/${prediction.id}`}/>
       </div>
@@ -74,7 +76,7 @@ const PredictionCard = ({prediction}: Props) => {
           <div className="grid grid-cols-2 gap-4 text-sm">
             <div className="flex items-center space-x-2">
               <Users className="w-4 h-4 text-muted-foreground"/>
-              <span>{formatParticipants(prediction.participantsNumber)}</span>
+              <span className="shrink-0">{formatParticipants(prediction.participantsNumber)}</span>
             </div>
           </div>
         </div>
@@ -84,9 +86,9 @@ const PredictionCard = ({prediction}: Props) => {
             <Badge className={precisionClass}>{precisionText}</Badge>
           </div>
 
-          <div className="grid grid-cols-2 gap-x-10 gap-y-2 text-xs">
+          <div className="grid grid-cols-2 gap-x-10 gap-y-2 text-xs items-start">
             {
-              prediction.models.map((model, i) => <div key={i} className="flex justify-between items-center">
+              prediction.models.map((model, i) => <div key={i} className="flex justify-between items-start">
                 <span className="text-muted-foreground">{model.title}</span>
                 <span className="font-medium">{Math.round(model.precision *100)}%</span>
               </div>)

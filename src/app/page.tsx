@@ -1,5 +1,7 @@
+export const dynamic = 'force-dynamic'
+
 import HomePage from "@/components/pages/HomePage/HomePage";
-import {getMatches} from "@/features/predictionCard/actions/getMatches";
+import {getMatches} from "@/features/prediction/actions/getMatches";
 
 
 export default async function Home() {
@@ -11,5 +13,5 @@ export default async function Home() {
     throw new Error(errorMsg)
   }
 
-  return <HomePage predictions={predictions} />
+  return <HomePage predictions={predictions.data} />
 }
