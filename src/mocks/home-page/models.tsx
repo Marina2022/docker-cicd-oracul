@@ -44,30 +44,30 @@ const GPT4oIcon = ()=>{
 export const models = [
   {
     id: "1",
-    title: "Grok",
+    title: "Grok 4.20",
     description: "Модель xAI для креативного анализа",
     precision: 93,
     predictionNumber: 2500,
     icon: <BotIcon />
   },
-  {
-    id: "2",
-    title: "Claude",
-    description: "Антропическая модель для анализа",
-    predictionNumber: 2156,
-    precision: 89,
-    icon: <BrainIcon />
-  },  {
-    id: "3",
-    title: "YandexGPT",
-    description: "Российская модель для локального контекста",
-    predictionNumber: 1923,
-    precision: 94,
-    icon: <TargetIcon />
-  },
+  // {
+  //   id: "2",
+  //   title: "Claude",
+  //   description: "Антропическая модель для анализа",
+  //   predictionNumber: 2156,
+  //   precision: 89,
+  //   icon: <BrainIcon />
+  // },  {
+  //   id: "3",
+  //   title: "YandexGPT",
+  //   description: "Российская модель для локального контекста",
+  //   predictionNumber: 1923,
+  //   precision: 94,
+  //   icon: <TargetIcon />
+  // },
   {
     id: "4",
-    title: "DeepSeek",
+    title: "DeepSeek-VL2",
     description: "Китайская модель для глубокого обучения",
     predictionNumber: 1800,
     precision: 90,
@@ -75,23 +75,23 @@ export const models = [
   },
   {
     id: "5",
-    title: "Gemini",
+    title: "Gemini 3.1 Pro",
     description: "Google AI для комплексного анализа",
     predictionNumber: 2234,
     precision: 91,
     icon: <SparklesIcon />
   },
-  {
-    id: "6",
-    title: "Perplexity",
-    description: "ИИ поисковик для актуальных данных",
-    predictionNumber: 1789,
-    precision: 88,
-    icon: <GlobeIcon />
-  },
+  // {
+  //   id: "6",
+  //   title: "Perplexity",
+  //   description: "ИИ поисковик для актуальных данных",
+  //   predictionNumber: 1789,
+  //   precision: 88,
+  //   icon: <GlobeIcon />
+  // },
   {
     id: "7",
-    title: "GPT-4o",
+    title: "GPT-5.4",
     description: "Самая продвинутая модель OpenAI",
     predictionNumber: 3124,
     precision: 95,

@@ -78,3 +78,26 @@ export function isTimestampPast(timestamp: number):boolean {
   const now = Math.floor(Date.now() / 1000);
   return now > timestamp;
 }
+
+
+
+export function formatAIModels(n: number): string {
+  const mod10 = n % 10;
+  const mod100 = n % 100;
+
+  if (mod100 >= 11 && mod100 <= 14) {
+    return `${n} ИИ моделей`;
+  }
+
+  if (mod10 === 1) {
+    return `${n} ИИ модель`;
+  }
+
+  if (mod10 >= 2 && mod10 <= 4) {
+    return `${n} ИИ модели`;
+  }
+
+  return `${n} ИИ моделей`;
+}
+
+

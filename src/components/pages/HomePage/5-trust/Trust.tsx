@@ -59,8 +59,8 @@ const Trust = () => {
                 className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-muted/20 text-chart-4 mb-3 mx-auto">
                 <Award className="w-8 h-8"/>
               </div>
-              <div className="text-4xl font-bold mb-2">7</div>
-              <div className="!text-base lg:text-sm text-muted-foreground">ведущих ИИ-моделей</div>
+              <div className="text-4xl font-bold mb-2">4</div>
+              <div className="!text-base lg:text-sm text-muted-foreground">ведущих ИИ-модели</div>
             </Card>
           </li>
 

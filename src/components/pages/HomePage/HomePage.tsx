@@ -8,15 +8,18 @@ import WhyTheyChoose from "@/components/pages/HomePage/6-whyTheyChoose/WhyTheyCh
 import PricePlan from "@/components/pages/HomePage/7-pricePlan/PricePlan";
 import Ready from "@/components/pages/HomePage/8-ready/Ready";
 import {PredictionCardType} from "@/features/prediction/types/PredictionCard";
+import HeroV2 from "@/components/pages/HomePage/1-heroV2/HeroV2";
 
 type Props = {
-  predictions: PredictionCardType[]
+  predictions: PredictionCardType[];
+  predictionsToday: PredictionCardType[];
 }
 
-const HomePage = ({predictions}: Props) => {
+const HomePage = ({predictions, predictionsToday}: Props) => {
   return (
     <main>
-      <Hero predictionId={predictions[0].id} />
+      {/*<Hero predictionId={predictions[0].id} />*/}
+      <HeroV2 predictionsToday={predictionsToday}/>
       <Models />
       <WorkingProcess prediction={predictions[0]} />
       <Predictions predictions={predictions} />

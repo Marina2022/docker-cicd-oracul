@@ -14,7 +14,7 @@ const Footer = () => {
           <div className="lg:col-span-2 space-y-6">
             <Logo big={true}/>
             <p className="text-muted-foreground leading-relaxed">Первая в России платформа сравнения прогнозов от ИИ.
-              Объединяем 7 ведущих ИИ-моделей для получения максимально точных прогнозов.</p>
+              Объединяем 4 ведущих ИИ-модели для получения максимально точных прогнозов.</p>
             <div className="space-y-3 text-sm">
               <div className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4" aria-hidden="true"/>

@@ -1,0 +1,53 @@
+import React from 'react';
+import {Badge} from "@/components/ui/badge";
+import {Button} from "@/components/ui/button";
+import Link from 'next/link';
+import {PredictionCardType} from "@/features/prediction/types/PredictionCard";
+
+type Props = {
+  predictionId: number;
+}
+
+const InnerFindOutYourFuture = ({predictionId}: Props) => {
+  return (
+    <div>
+      <div className="space-y-6 mb-8">
+        <Badge variant="blueBig">
+          <span className="max-sm:hidden">🚀 </span>Первая в России платформа сравнения ИИ-прогнозов
+        </Badge>
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+          <span className="gradient-text">Узнай будущее</span> <span>с помощью ИИ</span>
+
+        </h1>
+        <p className="lg:text-xl text-lg text-muted-foreground leading-relaxed max-w-[720px] mx-auto ">
+          Сравнивайте прогнозы от 4 ведущих AI-моделей, участвуйте в предсказаниях и зарабатывайте очки за точность.
+          Развлечение встречается с интеллектом.
+        </p>
+      </div>
+      {/*<div className="flex flex-col sm:flex-row gap-4 mb-7 justify-center">*/}
+      {/*  <Button asChild variant="default" className="px-8 py-6">*/}
+      {/*    <Link href={`/predictions/${predictionId}`}>*/}
+      {/*      Начать прогнозировать*/}
+      {/*    </Link>*/}
+      {/*  </Button>*/}
+      {/*  <Button variant="secondary" className="px-8 py-6">Смотреть демо</Button>*/}
+      {/*</div>*/}
+      {/*<div className="flex items-center space-x-8 justify-center mt-16">*/}
+      {/*  <div className="text-center">*/}
+      {/*    <div className="text-2xl font-bold gradient-text">4</div>*/}
+      {/*    <div className="text-sm text-muted-foreground">AI модели</div>*/}
+      {/*  </div>*/}
+      {/*  <div className="text-center">*/}
+      {/*    <div className="text-2xl font-bold gradient-text">10К+</div>*/}
+      {/*    <div className="text-sm text-muted-foreground">Активных пользователей</div>*/}
+      {/*  </div>*/}
+      {/*  <div className="text-center">*/}
+      {/*    <div className="text-2xl font-bold gradient-text">95%</div>*/}
+      {/*    <div className="text-sm text-muted-foreground">Точность консенсуса</div>*/}
+      {/*  </div>*/}
+      {/*</div>*/}
+    </div>
+  )
+}
+
+export default InnerFindOutYourFuture;
