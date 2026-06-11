@@ -45,7 +45,7 @@ const Ready = ({predictionId}: Props) => {
                 <TrendingUp className="w-6 h-6 text-primary"/>
               </div>
               <p className="font-semibold mb-2">Точные прогнозы</p>
-              <p className="text-sm text-muted-foreground">Консенсус 7 ИИ-моделей для максимальной точности</p>
+              <p className="text-sm text-muted-foreground">Консенсус 4 ИИ-моделей для максимальной точности</p>
             </Card>
           </li>
           <li>

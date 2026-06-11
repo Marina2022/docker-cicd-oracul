@@ -10,6 +10,7 @@ export type PredictionCardType = {
   participantsNumber: number;
   growing?: boolean;
   sport: string;
+  selection?: string;
 };
 
 export type PredictionCardModel = {

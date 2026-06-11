@@ -12,7 +12,7 @@ const Models = () => {
           ИИ модели
         </Badge>
         <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-          <span className="gradient-text">7 ИИ-моделей </span>
+          <span className="gradient-text">4 ИИ-модели </span>
           работают для вас
         </h2>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-16">
@@ -29,7 +29,7 @@ const Models = () => {
           <Card className="flex flex-col gap-6 rounded-xl border glassmorphism p-8 max-w-2xl 2xl:max-w-3xl mx-auto">
             <h3 className="text-2xl font-bold mb-4">Консенсус-алгоритм</h3>
             <p className="text-muted-foreground mb-6">
-              Наш уникальный алгоритм анализирует прогнозы всех 7 моделей, учитывает их историческую точность и
+              Наш уникальный алгоритм анализирует прогнозы всех 4 моделей, учитывает их историческую точность и
               формирует итоговый консенсус-прогноз с точностью до 95%.
             </p>
             <div className="grid grid-cols-3 gap-6 text-center">

@@ -21,7 +21,7 @@ const FindOutYourFuture = ({predictionId}: Props) => {
           с помощью ИИ
         </h1>
         <p className="lg:text-xl text-lg text-muted-foreground leading-relaxed">
-          Сравнивайте прогнозы от 7 ведущих AI-моделей, участвуйте в предсказаниях и зарабатывайте очки за точность.
+          Сравнивайте прогнозы от 4 ведущих AI-моделей, участвуйте в предсказаниях и зарабатывайте очки за точность.
           Развлечение встречается с интеллектом.
         </p>
       </div>
@@ -35,8 +35,8 @@ const FindOutYourFuture = ({predictionId}: Props) => {
       </div>
       <div className="flex items-center space-x-8">
         <div className="text-center">
-          <div className="text-2xl font-bold gradient-text">7</div>
-          <div className="text-sm text-muted-foreground">AI моделей</div>
+          <div className="text-2xl font-bold gradient-text">4</div>
+          <div className="text-sm text-muted-foreground">AI модели</div>
         </div>
         <div className="text-center">
           <div className="text-2xl font-bold gradient-text">10К+</div>

@@ -6,6 +6,7 @@ import {tryItNowModels} from "@/mocks/home-page/tryItNowModels";
 import TryItNowModel from "@/components/pages/HomePage/3-working-process/TryItNowModel";
 import Link from "next/link";
 import {PredictionCardType} from "@/features/prediction/types/PredictionCard";
+import {formatAIModels} from "@/utils/common";
 
 type Props = {
   prediction: PredictionCardType
@@ -30,7 +31,7 @@ const TryItNow = ({prediction}: Props) => {
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
                 <span className="text-muted-foreground">Участников:</span>
-                <span>{prediction.models.length} ИИ моделей</span>
+                <span>{formatAIModels(prediction.models.length)}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-muted-foreground">Консенсус:</span>
@@ -39,7 +40,6 @@ const TryItNow = ({prediction}: Props) => {
             </div>
           </div>
           <Button asChild className="w-full">
-            {/*<Link href="/hot-prediction">Посмотреть полный анализ</Link>*/}
             <Link href={`/predictions/${prediction.id}`}>Посмотреть полный анализ</Link>
           </Button>
         </div>
@@ -47,9 +47,6 @@ const TryItNow = ({prediction}: Props) => {
         <div className="space-y-3">
           <div className="text-sm text-muted-foreground mb-4">Прогнозы ИИ в реальном времени:</div>
           <ul className="space-y-3">
-            {/*{*/}
-            {/*  tryItNowModels.map((model, i) => <TryItNowModel key={i} model={model}/>)*/}
-            {/*}*/}
             {
               prediction.models.map((model, i) => <TryItNowModel key={i} model={model}/>)
             }
