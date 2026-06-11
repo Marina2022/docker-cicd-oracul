@@ -12,6 +12,7 @@ import countries from "i18n-iso-countries";
 import ru from "i18n-iso-countries/langs/ru.json";
 import {formatTimeline} from "@/utils/formatDates";
 import {getCountryCode} from "@/utils/countries";
+import {useRouter} from "next/navigation";
 
 countries.registerLocale(ru);
 
@@ -27,6 +28,7 @@ type Props = {
 
 const HeroV2 = ({predictionsToday}: Props) => {
 
+  const router = useRouter();
 
   const closestMatch = predictionsToday[predictionsToday.length - 1];
 
@@ -37,11 +39,7 @@ const HeroV2 = ({predictionsToday}: Props) => {
     ">
 
       <HeroInner predictionId={closestMatch.id}/>
-
-
       <div className="relative max-w-[1180px] mx-auto flex flex-col lg:flex-row sm:gap-[70px] gap-[20px] mb-4">
-
-
         {/* LEFT */}
         <div className="flex flex-col flex-1">
 
@@ -115,7 +113,8 @@ const HeroV2 = ({predictionsToday}: Props) => {
           </div>
 
           <div
-            className="w-full max-w-[420px] rounded-2xl p-6 dark:bg-white/5 border border-black/10 dark:border-white/10 bg-card backdrop-blur relative overflow-hidden">
+            onClick={()=>router.push(`/predictions/${closestMatch.id}`)}
+            className="cursor-pointer w-full max-w-[420px] rounded-2xl p-6 dark:bg-white/5 border border-black/10 dark:border-white/10 bg-card backdrop-blur relative overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500 to-cyan-400"/>
 
             <div className="flex justify-between mb-4 ">
@@ -156,7 +155,8 @@ const HeroV2 = ({predictionsToday}: Props) => {
             </div>
 
             <div className="flex justify-between text-sm text-slate-400 mb-2">
-              <span>Консенсус ИИ · Победа: {closestMatch.selection || ""} </span>
+              {/*<span>Консенсус ИИ · Победа: {closestMatch.selection || ""} </span>*/}
+              <span>Консенсус ИИ</span>
               <b className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
 
                 {Math.round(closestMatch.consensus * 100)}%
