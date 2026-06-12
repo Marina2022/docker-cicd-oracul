@@ -13,24 +13,21 @@ import ru from "i18n-iso-countries/langs/ru.json";
 import {formatTimeline} from "@/utils/formatDates";
 import {getCountryCode} from "@/utils/countries";
 import {useRouter} from "next/navigation";
+import {getClosestUpcomingMatch} from "@/utils/common";
 
 countries.registerLocale(ru);
 
-// export function getCountryCode(country: string) {
-//   const code = countries.getAlpha2Code(country, "ru");
-//   return code || null;
-// }
-
 type Props = {
-  predictionsToday: PredictionCardType[]
+  allPredictions: PredictionCardType[]
 }
 
 
-const HeroV2 = ({predictionsToday}: Props) => {
+const HeroV2 = ({allPredictions}: Props) => {
 
   const router = useRouter();
+  const closestMatch = getClosestUpcomingMatch(allPredictions)
 
-  const closestMatch = predictionsToday[predictionsToday.length - 1];
+  if (!closestMatch)  return null
 
   return (
     <section className="relative overflow-hidden px-5 sm:px-10 md:pt-[90px] pt-[60px] pb-[0px] dark:bg-[#080b14]  md:pb-[20px]
@@ -58,7 +55,6 @@ const HeroV2 = ({predictionsToday}: Props) => {
               ЧМ-2026
             </span>
           </h1>
-
 
           {/*знает исход каждого матча*/}
 
@@ -205,11 +201,9 @@ const HeroV2 = ({predictionsToday}: Props) => {
             </Link>
           </Button>
         </div>
-
         <div className="text-[13px] text-slate-500 mb-10 mx-auto">
           <b className="text-green-400 font-semibold">Бесплатно весь турнир</b> · без карты · регистрация за 30 секунд
         </div>
-
       </div>
     </section>
   )

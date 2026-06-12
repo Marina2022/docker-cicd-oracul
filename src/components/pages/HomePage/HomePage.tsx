@@ -12,14 +12,14 @@ import HeroV2 from "@/components/pages/HomePage/1-heroV2/HeroV2";
 
 type Props = {
   predictions: PredictionCardType[];
-  predictionsToday: PredictionCardType[];
+  allPredictions: PredictionCardType[];
 }
 
-const HomePage = ({predictions, predictionsToday}: Props) => {
+const HomePage = ({predictions, allPredictions}: Props) => {
+
   return (
     <main>
-      {/*<Hero predictionId={predictions[0].id} />*/}
-      <HeroV2 predictionsToday={predictionsToday}/>
+      <HeroV2 allPredictions={allPredictions}/>
       <Models />
       <WorkingProcess prediction={predictions[0]} />
       <Predictions predictions={predictions} />
