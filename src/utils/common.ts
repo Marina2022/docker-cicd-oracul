@@ -1,3 +1,5 @@
+import {PredictionCardType} from "@/features/prediction/types/PredictionCard";
+
 export const randomId = () => {
   return Math.random().toString(36)
 }
@@ -101,3 +103,28 @@ export function formatAIModels(n: number): string {
 }
 
 
+
+
+export function getClosestUpcomingMatch(matches: PredictionCardType[]): PredictionCardType | null {
+  const now = Date.now();
+
+
+  let closest: PredictionCardType | null = null;
+
+  for (const match of matches) {
+    const time = match.timeline * 1000;
+
+    console.log("country = ", match.home, "-",match.away)
+    console.log("now = ", now)
+    console.log("time = ", time)
+    console.log("-------")
+
+    if (time > now) {
+      if (!closest || time < closest.timeline * 1000) {
+        closest = match;
+      }
+    }
+  }
+
+  return closest;
+}

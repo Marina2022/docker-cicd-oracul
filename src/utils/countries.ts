@@ -23,9 +23,6 @@ export function getCountryCode(country: string): string | null {
 
   const normalized = country.trim();
 
-  const result = countries.getAlpha2Code("Республика Корея", "ru")
-  console.log("result = ", result)
-
   const code =
     countries.getAlpha2Code(normalized, "ru") ||
     countries.getAlpha2Code(normalized, "en");
