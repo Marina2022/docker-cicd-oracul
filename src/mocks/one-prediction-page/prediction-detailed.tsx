@@ -3,7 +3,7 @@ export const predictionDetailed = {
   result: {
     score: "4 - 0",
     won: "Зенит",
-    source: "Какой-нибудь источник"
+    source: "Какой-нибудь источник и данные"
   },
   category: "Спорт",
   title: "Кто станет Чемпионом РФПЛ в Сезоне 2025-2026? Зенит или ЦСКА",
