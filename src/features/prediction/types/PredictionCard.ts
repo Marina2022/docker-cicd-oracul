@@ -11,6 +11,8 @@ export type PredictionCardType = {
   growing?: boolean;
   sport: string;
   selection?: string;
+  home_country: string;
+  away_country: string;
 };
 
 export type PredictionCardModel = {

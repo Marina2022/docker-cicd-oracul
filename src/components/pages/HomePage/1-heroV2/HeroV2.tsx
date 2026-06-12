@@ -1,7 +1,6 @@
 "use client";
 
 import ReactCountryFlag from "react-country-flag";
-import Hero from "@/components/pages/HomePage/1-hero/Hero";
 import React from "react";
 import {PredictionCardType} from "@/features/prediction/types/PredictionCard";
 import HeroInner from "@/components/pages/HomePage/1-heroInner/HeroInner";
@@ -11,7 +10,6 @@ import Link from "next/link";
 import countries from "i18n-iso-countries";
 import ru from "i18n-iso-countries/langs/ru.json";
 import {formatTimeline} from "@/utils/formatDates";
-import {getCountryCode} from "@/utils/countries";
 import {useRouter} from "next/navigation";
 import {getClosestUpcomingMatch} from "@/utils/common";
 
@@ -20,7 +18,6 @@ countries.registerLocale(ru);
 type Props = {
   allPredictions: PredictionCardType[]
 }
-
 
 const HeroV2 = ({allPredictions}: Props) => {
 
@@ -125,7 +122,8 @@ const HeroV2 = ({allPredictions}: Props) => {
             <div className="flex justify-between items-center mb-4">
               <div className="flex items-center gap-2">
                 <ReactCountryFlag
-                  countryCode={getCountryCode(closestMatch.home) || ""}
+                  // countryCode={getCountryCode(closestMatch.home) || ""}
+                  countryCode={closestMatch.home_country}
                   svg
                   style={{width: "24px", height: "24px"}}
                 />
@@ -143,7 +141,8 @@ const HeroV2 = ({allPredictions}: Props) => {
                   {closestMatch.away}
                 </span>
                 <ReactCountryFlag
-                  countryCode={getCountryCode(closestMatch.away) || ""}
+                  // countryCode={getCountryCode(closestMatch.away) || ""}
+                  countryCode={closestMatch.away_country}
                   svg
                   style={{width: "24px", height: "24px"}}
                 />
