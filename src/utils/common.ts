@@ -103,8 +103,6 @@ export function formatAIModels(n: number): string {
 }
 
 
-
-
 export function getClosestUpcomingMatch(matches: PredictionCardType[]): PredictionCardType | null {
   const now = Date.now();
 
