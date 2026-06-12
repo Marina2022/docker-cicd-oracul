@@ -114,11 +114,6 @@ export function getClosestUpcomingMatch(matches: PredictionCardType[]): Predicti
   for (const match of matches) {
     const time = match.timeline * 1000;
 
-    console.log("country = ", match.home, "-",match.away)
-    console.log("now = ", now)
-    console.log("time = ", time)
-    console.log("-------")
-
     if (time > now) {
       if (!closest || time < closest.timeline * 1000) {
         closest = match;
