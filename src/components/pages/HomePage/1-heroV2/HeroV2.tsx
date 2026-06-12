@@ -16,21 +16,35 @@ import {useRouter} from "next/navigation";
 
 countries.registerLocale(ru);
 
-// export function getCountryCode(country: string) {
-//   const code = countries.getAlpha2Code(country, "ru");
-//   return code || null;
-// }
-
 type Props = {
-  predictionsToday: PredictionCardType[]
+  predictions: PredictionCardType[]
 }
 
+export function getClosestUpcomingMatch(matches: PredictionCardType[]): PredictionCardType | null {
+  const now = Date.now();
 
-const HeroV2 = ({predictionsToday}: Props) => {
+  let closest: PredictionCardType | null = null;
+
+  for (const match of matches) {
+    const time = match.timeline * 1000;
+
+    if (time > now) {
+      if (!closest || time < closest.timeline * 1000) {
+        closest = match;
+      }
+    }
+  }
+  return closest;
+}
+
+const HeroV2 = ({predictions}: Props) => {
 
   const router = useRouter();
 
-  const closestMatch = predictionsToday[predictionsToday.length - 1];
+  const closestMatch = getClosestUpcomingMatch(predictions)
+
+  if (!closestMatch) return null
+
 
   return (
     <section className="relative overflow-hidden px-5 sm:px-10 md:pt-[90px] pt-[60px] pb-[0px] dark:bg-[#080b14]  md:pb-[20px]
@@ -78,10 +92,6 @@ const HeroV2 = ({predictionsToday}: Props) => {
           <div className="relative mb-4">
             <div
               className="absolute inset-[-24px] sm:inset-[-46px] rounded-full bg-[radial-gradient(circle,rgba(232,179,61,0.2)_0%,transparent_65%)] animate-pulse"/>
-
-            {/*<svg className="relative drop-shadow-[0_14px_36px_rgba(232,179,61,0.35)] animate-float sm:w-[150px] w-[100px]" width="150"*/}
-            {/*     height="178" viewBox="0 0 110 130" fill="none">*/}
-
             <svg
               className="relative drop-shadow-[0_14px_36px_rgba(232,179,61,0.35)] animate-float sm:w-[150px] w-[100px] sm:h-[178px] h-[119px]"
               viewBox="0 0 110 130" fill="none">
