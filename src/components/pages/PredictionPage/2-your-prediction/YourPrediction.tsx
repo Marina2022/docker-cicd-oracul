@@ -7,17 +7,17 @@ import {Button} from '@/components/ui/button';
 import {TrendingDown, TrendingUp} from "lucide-react";
 import {PredictionType} from "@/features/prediction/types/PredictionType";
 
-const YourPrediction = ({prediction}:{prediction: PredictionType }) => {
+const YourPrediction = ({prediction}: { prediction: PredictionType }) => {
 
   const [yourPrediction, setYourPrediction] = useState<boolean | null>(null)
 
   let firstBtnClass
-  if (yourPrediction ===null || yourPrediction === false) firstBtnClass = "border bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 shadow-none border-input dark:hover:bg-input/50 h-10 rounded-md px-6 has-[>svg]:px-4 gap-2 w-full sm:w-auto sm:px-8"
-  if (yourPrediction ===true) firstBtnClass = "bg-primary text-primary-foreground hover:bg-primary/90  border hover:text-accent-foreground border-border h-10 rounded-md px-6 has-[>svg]:px-4 gap-2 w-full sm:w-auto sm:px-8"
+  if (yourPrediction === null || yourPrediction === false) firstBtnClass = "border bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 shadow-none border-input dark:hover:bg-input/50 h-10 rounded-md px-6 has-[>svg]:px-4 gap-2 w-full sm:w-auto sm:px-8"
+  if (yourPrediction === true) firstBtnClass = "bg-primary text-primary-foreground hover:bg-primary/90  border hover:text-accent-foreground border-border h-10 rounded-md px-6 has-[>svg]:px-4 gap-2 w-full sm:w-auto sm:px-8"
 
   let secondBtnClass
-  if (yourPrediction ===null || yourPrediction === true) secondBtnClass = "border bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 shadow-none border-input dark:hover:bg-input/50 h-10 rounded-md px-6 has-[>svg]:px-4 gap-2 w-full sm:w-auto sm:px-8"
-  if (yourPrediction ===false) secondBtnClass = "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60 h-10 rounded-md px-6 has-[>svg]:px-4 gap-2 w-full sm:w-auto sm:px-8"
+  if (yourPrediction === null || yourPrediction === true) secondBtnClass = "border bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 shadow-none border-input dark:hover:bg-input/50 h-10 rounded-md px-6 has-[>svg]:px-4 gap-2 w-full sm:w-auto sm:px-8"
+  if (yourPrediction === false) secondBtnClass = "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60 h-10 rounded-md px-6 has-[>svg]:px-4 gap-2 w-full sm:w-auto sm:px-8"
 
   const partOne = prediction.models.length > 1 ? "Анализ от AI-моделей" : "Анализ от AI-модели"
   const modelString = prediction.models.map(m => m.model_title).join(" | ");
@@ -39,7 +39,7 @@ const YourPrediction = ({prediction}:{prediction: PredictionType }) => {
         <p className="font-medium mb-4 text-sm sm:text-base">Ваш прогноз</p>
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
           <Button className={firstBtnClass} onClick={() => {
-            if (yourPrediction !==null) return
+            if (yourPrediction !== null) return
             setYourPrediction(true)
           }}>
             <TrendingUp/>
@@ -47,7 +47,7 @@ const YourPrediction = ({prediction}:{prediction: PredictionType }) => {
             <span className="text-sm sm:text-base">{prediction.home}</span>
           </Button>
           <Button className={secondBtnClass} onClick={() => {
-            if (yourPrediction !==null) return
+            if (yourPrediction !== null) return
             setYourPrediction(false)
           }}>
             <TrendingDown/>
@@ -55,7 +55,9 @@ const YourPrediction = ({prediction}:{prediction: PredictionType }) => {
           </Button>
         </div>
         {
-          yourPrediction  !== null && <p className="text-xs sm:text-sm text-muted-foreground mt-4">Ваш голос учтен! Спасибо за участие в прогнозе.</p>
+          yourPrediction !== null &&
+          <p className="text-xs sm:text-sm text-muted-foreground mt-4">Ваш голос учтен! Спасибо за участие в
+            прогнозе.</p>
         }
       </div>
     </Card>

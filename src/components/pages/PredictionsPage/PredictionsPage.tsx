@@ -44,10 +44,7 @@ const PredictionsPage = ({predictions: initialPredictions, count}: Props) => {
       // вычисляем независимо от перерендеров, т.к. иногда не успевают перерендеры за событием
       const currentOffset = predictionsCountRef.current;
 
-      console.log('грузим: ', `size=${PAGE_LIMIT}&page=${currentOffset / PAGE_LIMIT + 1}`)
       const newPredictions = await getMatches(`size=${PAGE_LIMIT}&page=${currentOffset / PAGE_LIMIT + 1}`)
-
-      console.log("newPredictions = ", newPredictions)
 
       if (newPredictions.data.length > 0) {
         setPredictions(prev => [...prev, ...newPredictions.data]);
@@ -64,7 +61,6 @@ const PredictionsPage = ({predictions: initialPredictions, count}: Props) => {
       isFetchingRef.current = false;
     }
   }
-
 
   // useEffect для обзервера - для infinite scroll
   useEffect(() => {

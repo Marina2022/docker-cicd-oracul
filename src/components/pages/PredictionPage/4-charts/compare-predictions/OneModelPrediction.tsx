@@ -34,15 +34,10 @@ const OneModelPrediction = ({model, prediction}: Props) => {
       <div className="flex items-center justify-between">
         <div className="text-sm font-medium">{model.model_title}</div>
         <div className="flex items-center gap-2">
-
           <Badge
-            // className={`border-transparent text-primary-foreground text-xs ${model.answerIsPositive ? "bg-primary" : "bg-destructive dark:bg-destructive/60"}`}>
             className={`border-transparent text-primary-foreground text-xs  max-w-[250px] ${badgeBg}`}>
-
             {predictionText}
           </Badge>
-
-
           <div className="text-xs text-muted-foreground">{Math.round(model.confidence * 100)}%</div>
         </div>
       </div>

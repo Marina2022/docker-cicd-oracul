@@ -83,6 +83,8 @@
 }
 
 @theme {
+    --breakpoint-xs: 30rem; /* 480px */
+
     --animate-float: float 4.5s ease-in-out infinite;
 
     @keyframes float {
@@ -487,4 +489,27 @@ html {
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
+
+.badge-signal {
+   background:  var(--chart-4);
+    color: var(--background);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.badge-grey-border {
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    /*border: 1px solid rgba(255, 255, 255, 0.1);*/
+    border: 1px solid var(--muted);
+}
+
 

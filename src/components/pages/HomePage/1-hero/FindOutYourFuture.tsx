@@ -18,7 +18,7 @@ const FindOutYourFuture = ({predictionId}: Props) => {
         <h1 className="text-4xl md:text-6xl font-bold leading-tight">
           <span className="gradient-text">Узнай будущее</span>
           <br/>
-          с помощью ИИ
+          с&nbsp;помощью&nbsp;ИИ
         </h1>
         <p className="lg:text-xl text-lg text-muted-foreground leading-relaxed">
           Сравнивайте прогнозы от 4 ведущих AI-моделей, участвуйте в предсказаниях и зарабатывайте очки за точность.

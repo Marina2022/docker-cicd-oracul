@@ -12,7 +12,7 @@ const CommentsBlock = ({comments}: { comments: PredictionCommentType[] }) => {
   if (!comments || comments.length === 0) return null
 
   return (
-    <Card className="border p-4 sm:p-6 glassmorphism">
+    <Card className="border p-4 sm:p-6 glassmorphism mt-4">
       <h2 className="flex items-center gap-2 mb-4 sm:mb-6 text-base sm:text-lg">
         <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5 text-primary"/>
         <span>Комментарии сообщества ({comments.length})</span>

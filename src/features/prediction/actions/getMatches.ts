@@ -5,8 +5,6 @@
 
 export const getMatches = async (filters = "") => {
 
-  console.log("filters = ", filters)
-
   try {
     let url = `${process.env.API_URL}/matches`
     if (filters) url = url + "?" +  filters
@@ -16,7 +14,6 @@ export const getMatches = async (filters = "") => {
     if (!res.ok) {
       let errorMessage = `Не удалось загрузить матчи - ${res.status} `;
       console.log(errorMessage)
-      console.log("Ответ: ", res)
       return {error: errorMessage, errorStatus: res.status};
     }
 

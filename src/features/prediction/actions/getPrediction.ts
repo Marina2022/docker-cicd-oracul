@@ -13,7 +13,6 @@ export const getPrediction = async (id: string) => {
     if (!res.ok) {
       let errorMessage = `Не удалось загрузить прогноз - ${res.status} `;
       console.log(errorMessage)
-      console.log("Ответ: ", res)
       return {error: errorMessage, errorStatus: res.status};
     }
 
@@ -24,3 +23,4 @@ export const getPrediction = async (id: string) => {
     return {error: err instanceof Error ? err.message : 'Неизвестная ошибка'};
   }
 }
+

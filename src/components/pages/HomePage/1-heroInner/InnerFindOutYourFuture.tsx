@@ -16,7 +16,7 @@ const InnerFindOutYourFuture = ({predictionId}: Props) => {
           <span className="max-sm:hidden">🚀 </span>Первая в России платформа сравнения ИИ-прогнозов
         </Badge>
         <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-          <span className="gradient-text">Узнай будущее</span> <span>с помощью ИИ</span>
+          <span className="gradient-text">Узнай будущее</span> <span>с&nbsp;помощью&nbsp;ИИ</span>
 
         </h1>
         <p className="lg:text-xl text-lg text-muted-foreground leading-relaxed max-w-[720px] mx-auto ">

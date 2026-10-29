@@ -12,7 +12,9 @@ const ChartsAll = ({prediction}: { prediction: PredictionType }) => {
       <PredictionPieChart voting={prediction.voiting}/>
       <ComparePredictions prediction={prediction}/>
       <BarChartBlock models={prediction.models}/>
-      <Result prediction={prediction} />
+      <div className="hidden lg:block">
+        <Result prediction={prediction}/>
+      </div>
     </div>
   );
 };
