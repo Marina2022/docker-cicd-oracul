@@ -34,7 +34,7 @@ const MarketAnalysis = ({model}: Props) => {
                           {
                             item.for.map((factor, i) => {
                               return (
-                                <li className="flex gap-3" key={i}>
+                                <li className="flex gap-2" key={i}>
                                   <Check className="text-green-500 size-3.5 mt-0.5 shrink-0 "/>
                                   <div className="text-xs text-muted-foreground leading-relaxed">{factor.text}</div>
                                 </li>
@@ -57,7 +57,7 @@ const MarketAnalysis = ({model}: Props) => {
                           {
                             item.against.map((factor, i) => {
                               return (
-                                <li className="flex gap-3" key={i}>
+                                <li className="flex gap-2" key={i}>
                                   <X className="text-destructive size-3.5 mt-0.5 shrink-0"/>
                                   <div className="text-xs text-muted-foreground leading-relaxed">{factor.text}</div>
                                 </li>
