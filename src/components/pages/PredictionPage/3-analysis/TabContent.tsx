@@ -1,5 +1,5 @@
 import React from 'react';
-import {Brain, CircleCheckBig, ExternalLink, Target } from 'lucide-react';
+import {Brain, CircleCheckBig, ExternalLink, Target} from 'lucide-react';
 import {Badge} from '@/components/ui/badge';
 import {Progress} from "@/components/ui/progress";
 import {Separator} from "@/components/ui/separator";
@@ -97,18 +97,19 @@ const TabContent = ({prediction, model}: Props) => {
                   <div>
                     <h5 className="text-xs sm:text-sm font-medium mb-1">{source.title}</h5>
                     <div className="text-xs text-muted-foreground leading-relaxed">{source.data}</div>
+                    {
+                      source.interpretation && (
+                        <div className="mt-3 rounded-md bg-muted/50 p-3">
+                          {/*<div className="text-[10px] sm:text-xs font-semibold uppercase tracking-wide text-foreground/70 mb-1">*/}
+                          {/*  Что показывают данные*/}
+                          {/*</div>*/}
 
-                    {/*<div className="text-xs text-muted-foreground leading-relaxed">{source.interpretation}</div>*/}
-
-                    <div className="mt-3 rounded-md bg-muted/50 p-3">
-                      {/*<div className="text-[10px] sm:text-xs font-semibold uppercase tracking-wide text-foreground/70 mb-1">*/}
-                      {/*  Что показывают данные*/}
-                      {/*</div>*/}
-
-                      <div className="text-[14px]  leading-relaxed text-foreground/90">
-                        {source.interpretation}
-                      </div>
-                    </div>
+                          <div className="text-[14px]  leading-relaxed text-foreground/90">
+                            {source.interpretation}
+                          </div>
+                        </div>
+                      )
+                    }
                   </div>
                 </li>
               }
@@ -218,7 +219,7 @@ const TabContent = ({prediction, model}: Props) => {
                               }
 
                               let roleToRender = completenessItem.role.toUpperCase()
-                              if(roleToRender === "CONTEXT_SQUAD") roleToRender = "CONTEXT"
+                              if (roleToRender === "CONTEXT_SQUAD") roleToRender = "CONTEXT"
 
                               return (
                                 <div
