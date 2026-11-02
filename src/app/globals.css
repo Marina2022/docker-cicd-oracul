@@ -142,58 +142,58 @@
 /**
  * Не применяется, если есть предки с классом text-....
  */
-@layer utilities {
+/*@layer utilities {*/
 
-    :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
-        h1 {
-            font-size: 3rem;
-            font-weight: var(--font-weight-medium);
-            line-height: 1.2;
-        }
+/*    :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {*/
+/*        h1 {*/
+/*            font-size: 3rem;*/
+/*            font-weight: var(--font-weight-medium);*/
+/*            line-height: 1.2;*/
+/*        }*/
 
-        h2 {
-            font-size: 2.25rem;
-            font-weight: var(--font-weight-medium);
-            line-height: 1.3;
-        }
+/*        h2 {*/
+/*            font-size: 2.25rem;*/
+/*            font-weight: var(--font-weight-medium);*/
+/*            line-height: 1.3;*/
+/*        }*/
 
-        h3 {
-            font-size: 1.875rem;
-            font-weight: var(--font-weight-medium);
-            line-height: 1.4;
-        }
+/*        h3 {*/
+/*            font-size: 1.875rem;*/
+/*            font-weight: var(--font-weight-medium);*/
+/*            line-height: 1.4;*/
+/*        }*/
 
-        h4 {
-            font-size: 1.5rem;
-            font-weight: var(--font-weight-medium);
-            line-height: 1.4;
-        }
+/*        h4 {*/
+/*            font-size: 1.5rem;*/
+/*            font-weight: var(--font-weight-medium);*/
+/*            line-height: 1.4;*/
+/*        }*/
 
-        p {
-            font-size: var(--text-base);
-            font-weight: var(--font-weight-normal);
-            line-height: 1.6;
-        }
+/*        p {*/
+/*            font-size: var(--text-base);*/
+/*            font-weight: var(--font-weight-normal);*/
+/*            line-height: 1.6;*/
+/*        }*/
 
-        label {
-            font-size: var(--text-base);
-            font-weight: var(--font-weight-medium);
-            line-height: 1.5;
-        }
+/*        label {*/
+/*            font-size: var(--text-base);*/
+/*            font-weight: var(--font-weight-medium);*/
+/*            line-height: 1.5;*/
+/*        }*/
 
-        button {
-            font-size: var(--text-base);
-            font-weight: var(--font-weight-medium);
-            line-height: 1.5;
-        }
+/*        button {*/
+/*            font-size: var(--text-base);*/
+/*            font-weight: var(--font-weight-medium);*/
+/*            line-height: 1.5;*/
+/*        }*/
 
-        input {
-            font-size: var(--text-base);
-            font-weight: var(--font-weight-normal);
-            line-height: 1.5;
-        }
-    }
-}
+/*        input {*/
+/*            font-size: var(--text-base);*/
+/*            font-weight: var(--font-weight-normal);*/
+/*            line-height: 1.5;*/
+/*        }*/
+/*    }*/
+/*}*/
 
 html {
     font-size: var(--font-size);

@@ -8,7 +8,7 @@ type Props = {
 const MarketCard = ({market}: Props) => {
   return (
     <li
-      className="px-3 mb-3 dark:bg-[#131c2e] bg-[rgb(0_0_0/.04)] rounded-lg  border dark:border-gray-800 border-gray-300 flex-col sm:flex-row  flex  ">
+      className="px-3 mb-3 dark:bg-[#131c2e] bg-[rgb(0_0_0/.04)] rounded-lg  border dark:border-gray-800 border-gray-300 flex-col sm:flex-row  flex">
       <div className="flex sm:flex-col gap-3 sm:mb-2 sm:w-2/5 items-start py-3 justify-between sm:justify-start ">
         <div className="flex items-start gap-3">
           <div className="flex-1">

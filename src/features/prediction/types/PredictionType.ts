@@ -98,6 +98,19 @@ type Consensus = {
   p_book: number;
 };
 
+type MarketFactor = {
+  factor_id: string;
+  text: string;
+};
+
+export type MarketAnalysis = {
+  market: string;
+  market_label: string;
+  for: MarketFactor[];
+  against: MarketFactor[];
+  limitation: string;
+  conclusion: string;
+};
 
 export type PredictionModel = {
   role: string;
@@ -116,6 +129,7 @@ export type PredictionModel = {
 type Reasonings = {
   factors: Factor[];
   data_gaps: string[];
+  market_analysis: MarketAnalysis[]
 };
 
 type Factor = {

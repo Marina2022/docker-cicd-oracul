@@ -6,6 +6,7 @@ import {Separator} from "@/components/ui/separator";
 import {PredictionModel, PredictionType} from "@/features/prediction/types/PredictionType";
 import MarketCard from "@/components/pages/PredictionPage/3-analysis/MarketCard";
 import Consensus from "@/components/pages/PredictionPage/3-analysis/Consensus";
+import MarketAnalysis from "@/components/pages/PredictionPage/3-analysis/MarketAnalysis";
 
 type Props = {
   prediction: PredictionType;
@@ -116,6 +117,9 @@ const TabContent = ({prediction, model}: Props) => {
             )
           }
         </ul>
+
+        <Separator className="my-4"/>
+        <MarketAnalysis model={model} />
 
         {
           model.role === 'risk' && (
