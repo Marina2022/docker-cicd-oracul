@@ -113,8 +113,10 @@ type Reasonings = {
 };
 
 type Factor = {
+  id: string;
   title: string;
-  text: string;
+  data: string;
+  interpretation: string;
 };
 
 type DataSource = {

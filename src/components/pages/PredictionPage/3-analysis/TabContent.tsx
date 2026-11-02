@@ -96,7 +96,19 @@ const TabContent = ({prediction, model}: Props) => {
                   </div>
                   <div>
                     <h5 className="text-xs sm:text-sm font-medium mb-1">{source.title}</h5>
-                    <div className="text-xs text-muted-foreground leading-relaxed">{source.text}</div>
+                    <div className="text-xs text-muted-foreground leading-relaxed">{source.data}</div>
+
+                    {/*<div className="text-xs text-muted-foreground leading-relaxed">{source.interpretation}</div>*/}
+
+                    <div className="mt-3 rounded-md bg-muted/50 p-3">
+                      {/*<div className="text-[10px] sm:text-xs font-semibold uppercase tracking-wide text-foreground/70 mb-1">*/}
+                      {/*  Что показывают данные*/}
+                      {/*</div>*/}
+
+                      <div className="text-[14px]  leading-relaxed text-foreground/90">
+                        {source.interpretation}
+                      </div>
+                    </div>
                   </div>
                 </li>
               }
