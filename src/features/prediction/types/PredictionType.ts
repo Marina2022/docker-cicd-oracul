@@ -35,6 +35,12 @@ export type MarketSignal = {
   "market_label": string;
 };
 
+export type ConsensusMainCandidateFactor = {
+  id: string;
+  text: string;
+  title: string;
+}
+
 export type ConsensusMainCandidate = {
   market_type: string;
   line: number;
@@ -47,7 +53,7 @@ export type ConsensusMainCandidate = {
   edge: number;
   is_signal: boolean;
   explanation: {
-    consensus_factors: Factor[]
+    consensus_factors: ConsensusMainCandidateFactor[]
   } | null
 };
 
