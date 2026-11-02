@@ -118,8 +118,15 @@ const TabContent = ({prediction, model}: Props) => {
           }
         </ul>
 
-        <Separator className="my-4"/>
-        <MarketAnalysis model={model} />
+        {
+          model.reasonigs.market_analysis.length > 0 && (
+            <>
+              <Separator className="my-4"/>
+              <MarketAnalysis model={model}/>
+            </>
+          )
+        }
+
 
         {
           model.role === 'risk' && (
