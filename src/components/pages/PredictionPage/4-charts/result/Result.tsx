@@ -62,7 +62,7 @@ const Result = ({prediction}: { prediction: PredictionType }) => {
             className='flex flex-col gap-2 w-full rounded-lg p-3 items-center bg-gray-200 dark:bg-[rgba(255,255,255,.1)]'>
             <div className="text-muted-foregrounde text-[14px]">ROI по матчу</div>
             <div className="text-chart-4 font-bold text-lg">
-              {(prediction.result.roi_pct).toFixed(0)}%
+              {prediction.result.roi_pct && (prediction.result.roi_pct).toFixed(0)}%
             </div>
           </div>
         </div>

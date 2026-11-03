@@ -7,14 +7,23 @@ import {PredictionType} from "@/features/prediction/types/PredictionType";
 
 
 const ChartsAll = ({prediction}: { prediction: PredictionType }) => {
+
+  console.log("prediction.result = ", prediction.result)
+
   return (
     <div className="space-y-4 sm:space-y-6">
       <PredictionPieChart voting={prediction.voiting}/>
       <ComparePredictions prediction={prediction}/>
       <BarChartBlock models={prediction.models}/>
-      <div className="hidden lg:block">
-        <Result prediction={prediction}/>
-      </div>
+
+      {
+        prediction.result && (
+          <div className="hidden lg:block">
+            <Result prediction={prediction}/>
+          </div>
+        )
+      }
+
     </div>
   );
 };
