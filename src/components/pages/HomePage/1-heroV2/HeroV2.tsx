@@ -47,7 +47,7 @@ const HeroV2 = ({allPredictions}: Props) => {
 
           <div
             className="text-sm sm:text-lg tracking-[1px] uppercase text-primary font-medium md:font-bold mb-4 text-center mx:0 md:mx-auto lg:mx-0 text-left md:text-center lg:text-left">
-            Футбольная аналитика нового уровня
+            Футбольная аналитика нового уровня!
           </div>
 
           <h1
